@@ -1,0 +1,16 @@
+﻿spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/graduationdb
+    username: postgres
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
