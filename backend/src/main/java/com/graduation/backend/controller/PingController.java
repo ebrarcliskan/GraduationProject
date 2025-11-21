@@ -1,4 +1,4 @@
-package com.graduation.backend.api;
+package com.graduation.backend.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
