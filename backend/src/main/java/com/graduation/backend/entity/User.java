@@ -1,5 +1,6 @@
 package com.graduation.backend.entity;
 
+import com.graduation.backend.entity.Branch;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -42,6 +43,10 @@ public class User {
 
     @Column(nullable = false)
     private LocalDateTime updatedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "branch_id")
+    private Branch branch;
 
     @PrePersist
     protected void onCreate() {
