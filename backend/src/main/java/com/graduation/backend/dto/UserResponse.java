@@ -16,4 +16,6 @@ public class UserResponse {
     private boolean active;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private Long branchId;
+    private String branchName;
 }

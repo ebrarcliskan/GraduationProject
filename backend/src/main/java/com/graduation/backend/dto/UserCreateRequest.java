@@ -30,4 +30,7 @@ public class UserCreateRequest {
     @NotNull
     private Role role;
 
+    @NotNull(message = "Branch ID cannot be null")
+    private Long branchId;
+
 }
