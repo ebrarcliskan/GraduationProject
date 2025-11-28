@@ -20,6 +20,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/ping").permitAll()
                         .requestMatchers("/api/users/**").permitAll()
                         .requestMatchers("/api/branches/**").permitAll()
+                        .requestMatchers("/api/products/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults());
