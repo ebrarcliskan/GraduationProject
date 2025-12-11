@@ -22,6 +22,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/branches/**").permitAll()
                         .requestMatchers("/api/products/**").permitAll()
                         .requestMatchers("/api/stocks/**").permitAll()
+                        .requestMatchers("/api/sales/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults());
