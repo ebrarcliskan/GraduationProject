@@ -14,3 +14,7 @@
 
 server:
   port: 8080
+
+jwt:
+  secret: graduation-project-secret-key-minimum-256-bits-long-for-hs256-algorithm-secure-key-2024-very-long-secret-key-for-jwt-token-generation-and-validation-purposes
+  expiration: 86400000  # 24 saat (milisaniye cinsinden)

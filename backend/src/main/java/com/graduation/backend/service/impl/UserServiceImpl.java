@@ -9,6 +9,7 @@ import com.graduation.backend.repository.UserRepository;
 import com.graduation.backend.service.UserService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
@@ -20,6 +21,7 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final BranchRepository branchRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserResponse createUser(UserCreateRequest request) {
@@ -31,7 +33,7 @@ public class UserServiceImpl implements UserService {
                  .username(request.getUsername())
                  .fullName(request.getFullName())
                  .email(request.getEmail())
-                 .password(request.getPassword())
+                 .password(passwordEncoder.encode(request.getPassword()))
                  .role(request.getRole())
                  .active(true)
                  .branch(branch)
