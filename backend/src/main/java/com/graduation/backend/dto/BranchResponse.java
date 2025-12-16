@@ -1,5 +1,6 @@
 package com.graduation.backend.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import lombok.Data;
 import java.time.LocalDateTime;
@@ -12,6 +13,10 @@ public class BranchResponse {
     private String address;
     private String phone;
     private boolean active;
+    
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime createdAt;
+    
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime updatedAt;
 }

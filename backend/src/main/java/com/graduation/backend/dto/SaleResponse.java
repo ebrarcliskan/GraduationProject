@@ -1,5 +1,6 @@
 package com.graduation.backend.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.Builder;
 import java.math.BigDecimal;
@@ -18,5 +19,7 @@ public class SaleResponse {
     private Integer quantity;
     private BigDecimal unitPrice;
     private BigDecimal totalAmount;
+    
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime saleTime;
 }

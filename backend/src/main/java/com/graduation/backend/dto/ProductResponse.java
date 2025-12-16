@@ -1,5 +1,6 @@
 package com.graduation.backend.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import lombok.Data;
 import java.math.BigDecimal;
@@ -14,6 +15,10 @@ public class ProductResponse {
     private String description;
     private BigDecimal unitPrice;
     private boolean active;
+    
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime createdAt;
+    
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime updatedAt;
 }
