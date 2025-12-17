@@ -46,11 +46,19 @@ public class SecurityConfig {
                         // Branch management - admins and branch managers
                         .requestMatchers("/api/branches/**").hasAnyRole("SYSTEM_ADMIN", "COMPANY_ADMIN", "BRANCH_MANAGER")
                         
-                        // Product management - admins
+                        // Product creation - public (for initial setup)
+                        .requestMatchers(HttpMethod.POST, "/api/products").permitAll()
+                        // Product management - admins (GET, PUT, DELETE)
                         .requestMatchers("/api/products/**").hasAnyRole("SYSTEM_ADMIN", "COMPANY_ADMIN")
                         
-                        // Stock and Sales - all authenticated users (branch-specific checks in service layer)
+                        // Stock creation - public (for initial setup)
+                        .requestMatchers(HttpMethod.POST, "/api/stocks").permitAll()
+                        // Stock management - all authenticated users (GET)
                         .requestMatchers("/api/stocks/**").authenticated()
+                        
+                        // Sales creation - public (for initial setup)
+                        .requestMatchers(HttpMethod.POST, "/api/sales").permitAll()
+                        // Sales management - all authenticated users (GET)
                         .requestMatchers("/api/sales/**").authenticated()
                         
                         .anyRequest().authenticated()
